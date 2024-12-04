@@ -33,16 +33,6 @@ let arr: User[] = [
 
 console.log(arr[0], arr[1]);
 
-const averageAge = (x: User[]) => {
-  let sumAge: number = 0;
-  x.forEach((user) => {
-    sumAge += user.age;
-  });
-  /* const sumAge = (x + y) / 2; */
-
-  return sumAge / 2;
-};
-
 const oldestUser = (x: User[]) => {
   let age: number[] = [0];
   x.forEach((user, index) => {
@@ -52,6 +42,18 @@ const oldestUser = (x: User[]) => {
   const maxNumbers = Math.max(...age);
   return maxNumbers;
 };
+
+/* ⭐ Skapa en funktion averageAge i enlitendemo. Funktionen tar emot arrayen med användare och returnerar en siffra: medelåldern på alla användare i arrayen. */
+
+const averageAge = (x: User[]) => {
+  let sumAges: number = 0;
+  x.forEach((user) => {
+    sumAges += user.age;
+  });
+  return sumAges / 2;
+};
+
+console.log(`average age= ${averageAge(arr)}`);
 
 /* const averageNumberOfHobbies = (x: User[]) => {
   let sumHobbies: string[] = [""];
@@ -63,13 +65,21 @@ const oldestUser = (x: User[]) => {
 }; */
 
 const oAge = oldestUser(arr);
-const newNumber = averageAge(arr);
+/* const newNumber = averageAge(arr); */
 /* const numberOfHobbies = averageNumberOfHobbies(arr);
 console.log(`numberOfHobbies are=${numberOfHobbies}`); */
-console.log(`newNumber is ${newNumber},
-\noAge is ${oAge}`);
+/* console.log(`newNumber is ${newNumber},
+\noAge is ${oAge}`); */
 
-/* ⭐ Skapa en funktion averageAge i enlitendemo. Funktionen tar emot arrayen med användare och returnerar en siffra: medelåldern på alla användare i arrayen. */
+/* const averageAge = (x: User[]) => {
+	let sumAge: number = 0;
+	x.forEach((user) => {
+	  sumAge += user.age;
+	});
+	/* const sumAge = (x + y) / 2; 
+  
+	return sumAge / 2;
+  }; */
 
 /* Skapa en funktion oldestUseri enlitendemo. Funktionen tar emot arrayen med användare och returnerar en siffra: den högsta åldern av alla användare.
 

@@ -27,7 +27,7 @@ let arr: User[] = [
   {
     name: "Mio",
     age: 45,
-    hobbies: ["läsa böcker", "spela spel"],
+    hobbies: ["läsa böcker", "spela spel", "janne"],
   },
 ];
 
@@ -85,3 +85,15 @@ console.log(`numberOfHobbies are=${numberOfHobbies}`); */
 
 Alla användara ska ha en eller flera hobbies. Skapa en funktion averageNumberOfHobbies. Funktionen tar emot en array av användare och returnerar en siffra: medelantalet hobbies per användare.
  */
+
+const averageNumberOfHobbies = (x: User[]) => {
+  let totalHobbies: number = 0;
+  x.forEach((user) => {
+    totalHobbies += user.hobbies.length;
+  });
+  return totalHobbies / x.length;
+};
+
+console.log(
+  `medelantalet hobbies per användare= ${averageNumberOfHobbies(arr)}`
+);
